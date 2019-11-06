@@ -16,8 +16,8 @@ namespace CirclesGalore.Game.Tests
             {
                 Children = new Drawable[]
                 {
-                    new TestBrowser("CirclesGalore"),
-                    new CursorContainer(),
+                    new TestBrowser("CirclesGalore"), // lgtm [cs/local-not-disposed]
+                    new CursorContainer() // lgtm [cs/local-not-disposed]
                 },
             };
         }

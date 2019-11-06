@@ -18,10 +18,8 @@ namespace CirclesGalore.Runner.Desktop
             using (OGame game = new CirclesGaloreGame())
             using (OGame gameTests = new CirclesGaloreGameTests())
             {
-                if (testMode)
-                    host.Run(gameTests);
-                else
-                    host.Run(game);
+                if (testMode) host.Run(gameTests);
+                else host.Run(game);
             }
         }
     }
