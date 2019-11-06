@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CirclesGalore.Main", "CirclesGalore.Main\CirclesGalore.Main.csproj", "{FBB513B9-808A-4B3B-B327-8FDD3A60D9A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CirclesGalore.Runner.Desktop", "CirclesGalore.Main\CirclesGalore.Runner.Desktop.csproj", "{FBB513B9-808A-4B3B-B327-8FDD3A60D9A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CirclesGalore.Game", "CirclesGalore.Game\CirclesGalore.Game.csproj", "{34CCB375-56A9-46D9-90C9-8DB1C9F51688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CirclesGalore.Game.Tests", "CirclesGalore.Game.Tests\CirclesGalore.Game.Tests.csproj", "{C82DBD0F-40B4-4BA6-A3D7-4960CD230C6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FBB513B9-808A-4B3B-B327-8FDD3A60D9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBB513B9-808A-4B3B-B327-8FDD3A60D9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBB513B9-808A-4B3B-B327-8FDD3A60D9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CCB375-56A9-46D9-90C9-8DB1C9F51688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CCB375-56A9-46D9-90C9-8DB1C9F51688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CCB375-56A9-46D9-90C9-8DB1C9F51688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CCB375-56A9-46D9-90C9-8DB1C9F51688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82DBD0F-40B4-4BA6-A3D7-4960CD230C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82DBD0F-40B4-4BA6-A3D7-4960CD230C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82DBD0F-40B4-4BA6-A3D7-4960CD230C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82DBD0F-40B4-4BA6-A3D7-4960CD230C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

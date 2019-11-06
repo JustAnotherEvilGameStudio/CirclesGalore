@@ -1,12 +1,28 @@
 ﻿using System;
+using CirclesGalore.Game;
+using CirclesGalore.Game.Tests;
+using osu.Framework.Platform;
+using osu.Framework;
+using OGame = osu.Framework.Game;
 
-namespace CirclesGalore.Main
+namespace CirclesGalore.Runner.Desktop
 {
     class Program
     {
-        static void Main(string[] args)
+        [MTAThread]
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var testMode = true;
+
+            using (GameHost host = Host.GetSuitableHost(@"CirclesGalore"))
+            using (OGame game = new CirclesGaloreGame())
+            using (OGame gameTests = new CirclesGaloreGameTests())
+            {
+                if (testMode)
+                    host.Run(gameTests);
+                else
+                    host.Run(game);
+            }
         }
     }
 }
