@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using CirclesGalore.Game;
 using CirclesGalore.Game.Tests;
 using osu.Framework.Platform;
@@ -10,29 +9,36 @@ namespace CirclesGalore.Runner.Desktop
 {
     class Program
     {
+
+        private static bool _Test { get; set; }
+
         [STAThread]
         public static void Main(string[] args)
         {
-            var testMode = false;
-
-            switch (args.FirstOrDefault() ?? string.Empty)
-            {
-                case "--test":
-                    testMode = true;
-                    break;
-                default:
-                    testMode = false;
-                    break;
-            }
+            foreach (string arg in args)
+                ParseFlags(arg);
 
             using (DesktopGameHost host = Host.GetSuitableHost(@"CirclesGalore"))
             {
                 using (OGame game = new CirclesGaloreGame())
                 using (OGame gameTests = new CirclesGaloreGameTests())
                 {
-                    if (testMode) host.Run(gameTests);
+                    if (_Test) host.Run(gameTests);
                     else host.Run(game);
                 }
+            }
+        }
+
+        private static void ParseFlags(string arg)
+        {
+            switch (arg ?? string.Empty)
+            {
+                case "--test":
+                    _Test = true;
+                    break;
+                default:
+                    _Test = false;
+                    break;
             }
         }
     }

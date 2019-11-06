@@ -1,5 +1,4 @@
-﻿using osu.Framework;
-using osu.Framework.Graphics;
+﻿using osu.Framework.Graphics;
 using osuTK;
 using osuTK.Graphics;
 using osu.Framework.Graphics.Shapes;
