@@ -5,9 +5,9 @@ using osu.Framework.Graphics.Cursor;
 using osu.Framework.Platform;
 using osu.Framework.Testing;
 
-namespace CirclesGalore.Game.Tests
+namespace Circles.Game.Tests
 {
-    public class CirclesGaloreGameTests : CirclesGaloreGame
+    public class CirclesGameTests : CirclesGame
     {
         [BackgroundDependencyLoader]
         private void load()

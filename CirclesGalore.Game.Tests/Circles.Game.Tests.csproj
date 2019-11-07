@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CirclesGalore.Game\CirclesGalore.Game.csproj" />
+    <ProjectReference Include="..\CirclesGalore.Game\Circles.Game.csproj" />
   </ItemGroup>
 
 </Project>

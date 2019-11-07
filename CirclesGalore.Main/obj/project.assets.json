@@ -1282,31 +1282,31 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "CirclesGalore.Game/1.0.0": {
+      "Circles.Game/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "ppy.osu.Framework": "2019.1106.0"
         },
         "compile": {
-          "bin/placeholder/CirclesGalore.Game.dll": {}
+          "bin/placeholder/Circles.Game.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CirclesGalore.Game.dll": {}
+          "bin/placeholder/Circles.Game.dll": {}
         }
       },
-      "CirclesGalore.Game.Tests/1.0.0": {
+      "Circles.Game.Tests/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
-          "CirclesGalore.Game": "1.0.0",
+          "Circles.Game": "1.0.0",
           "ppy.osu.Framework": "2019.1106.0"
         },
         "compile": {
-          "bin/placeholder/CirclesGalore.Game.Tests.dll": {}
+          "bin/placeholder/Circles.Game.Tests.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CirclesGalore.Game.Tests.dll": {}
+          "bin/placeholder/Circles.Game.Tests.dll": {}
         }
       }
     }
@@ -4359,21 +4359,21 @@
         "version.txt"
       ]
     },
-    "CirclesGalore.Game/1.0.0": {
+    "Circles.Game/1.0.0": {
       "type": "project",
-      "path": "../CirclesGalore.Game/CirclesGalore.Game.csproj",
-      "msbuildProject": "../CirclesGalore.Game/CirclesGalore.Game.csproj"
+      "path": "../CirclesGalore.Game/Circles.Game.csproj",
+      "msbuildProject": "../CirclesGalore.Game/Circles.Game.csproj"
     },
-    "CirclesGalore.Game.Tests/1.0.0": {
+    "Circles.Game.Tests/1.0.0": {
       "type": "project",
-      "path": "../CirclesGalore.Game.Tests/CirclesGalore.Game.Tests.csproj",
-      "msbuildProject": "../CirclesGalore.Game.Tests/CirclesGalore.Game.Tests.csproj"
+      "path": "../CirclesGalore.Game.Tests/Circles.Game.Tests.csproj",
+      "msbuildProject": "../CirclesGalore.Game.Tests/Circles.Game.Tests.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "CirclesGalore.Game >= 1.0.0",
-      "CirclesGalore.Game.Tests >= 1.0.0",
+      "Circles.Game >= 1.0.0",
+      "Circles.Game.Tests >= 1.0.0",
       "ppy.osu.Framework >= 2019.1106.0"
     ]
   },
@@ -4384,9 +4384,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Main\\CirclesGalore.Runner.Desktop.csproj",
-      "projectName": "CirclesGalore.Runner.Desktop",
-      "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Main\\CirclesGalore.Runner.Desktop.csproj",
+      "projectUniqueName": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Main\\Circles.Desktop.csproj",
+      "projectName": "Circles.Desktop",
+      "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Main\\Circles.Desktop.csproj",
       "packagesPath": "C:\\Users\\ethoa\\.nuget\\packages\\",
       "outputPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Main\\obj\\",
       "projectStyle": "PackageReference",
@@ -4415,11 +4415,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game.Tests\\CirclesGalore.Game.Tests.csproj": {
-              "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game.Tests\\CirclesGalore.Game.Tests.csproj"
+            "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game.Tests\\Circles.Game.Tests.csproj": {
+              "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game.Tests\\Circles.Game.Tests.csproj"
             },
-            "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game\\CirclesGalore.Game.csproj": {
-              "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game\\CirclesGalore.Game.csproj"
+            "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game\\Circles.Game.csproj": {
+              "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game\\Circles.Game.csproj"
             }
           }
         }

@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CirclesGalore.Game.Tests\CirclesGalore.Game.Tests.csproj" />
-    <ProjectReference Include="..\CirclesGalore.Game\CirclesGalore.Game.csproj" />
+    <ProjectReference Include="..\CirclesGalore.Game.Tests\Circles.Game.Tests.csproj" />
+    <ProjectReference Include="..\CirclesGalore.Game\Circles.Game.csproj" />
   </ItemGroup>
 
 </Project>

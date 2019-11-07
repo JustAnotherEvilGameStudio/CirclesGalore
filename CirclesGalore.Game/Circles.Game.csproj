@@ -8,4 +8,8 @@
     <PackageReference Include="ppy.osu.Framework" Version="2019.1106.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Screens\Menu\" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,138 @@
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Circles.Game.Configuration;
+using osu.Framework.Allocation;
+using osu.Framework.Bindables;
+using osu.Framework.Graphics.Containers;
+using osu.Framework.Input;
+using osu.Framework.Input.Bindings;
+using osu.Framework.Platform;
+using osu.Framework.Threading;
+using Circles.Game.Input.Bindings;
+using SixLabors.ImageSharp;
+
+namespace Circles.Game.Graphics
+{
+    public class ScreenshotManager : Container, IKeyBindingHandler<GlobalAction>, IHandleGlobalKeyboardInput
+    {
+        private readonly BindableBool cursorVisibility = new BindableBool(true);
+
+        public IBindable<bool> CursorVisibility => cursorVisibility;
+
+        private Bindable<ScreenshotFormat> screenshotFormat;
+        private Bindable<bool> captureMenuCursor;
+
+        private GameHost host;
+        private Storage storage;
+
+        [BackgroundDependencyLoader]
+        private void load(GameHost host, GameConfigManager config, Storage storage)
+        {
+            this.host = host;
+            this.storage = storage.GetStorageForDirectory(@"screenshots");
+
+            screenshotFormat = config.GetBindable<ScreenshotFormat>(CirclesSetting.ScreenshotFormat);
+            captureMenuCursor = config.GetBindable<bool>(CirclesSetting.ScreenshotCaptureMenuCursor);
+        }
+
+        public bool OnPressed(GlobalAction action)
+        {
+            switch (action)
+            {
+                case GlobalAction.TakeScreenshot:
+                    TakeScreenshotAsync();
+                    return true;
+            }
+
+            return false;
+        }
+
+        public bool OnReleased(GlobalAction action) => false;
+
+        private volatile int screenShotTasks;
+
+        public Task TakeScreenshotAsync() => Task.Run(async () =>
+        {
+            Interlocked.Increment(ref screenShotTasks);
+
+            if (!captureMenuCursor.Value)
+            {
+                cursorVisibility.Value = false;
+
+                // We need to wait for at most 3 draw nodes to be drawn, following which we can be assured at least one DrawNode has been generated/drawn with the set value
+                const int frames_to_wait = 3;
+
+                int framesWaited = 0;
+
+                using (var framesWaitedEvent = new ManualResetEventSlim(false))
+                {
+                    ScheduledDelegate waitDelegate = host.DrawThread.Scheduler.AddDelayed(() =>
+                    {
+                        if (framesWaited++ < frames_to_wait)
+                            // ReSharper disable once AccessToDisposedClosure
+                            framesWaitedEvent.Set();
+                    }, 10, true);
+
+                    framesWaitedEvent.Wait();
+                    waitDelegate.Cancel();
+                }
+            }
+
+            using (var image = await host.TakeScreenshotAsync())
+            {
+                if (Interlocked.Decrement(ref screenShotTasks) == 0 && cursorVisibility.Value == false)
+                    cursorVisibility.Value = true;
+
+                var fileName = getFileName();
+                if (fileName == null) return;
+
+                var stream = storage.GetStream(fileName, FileAccess.Write);
+
+                switch (screenshotFormat.Value)
+                {
+                    case ScreenshotFormat.Png:
+                        image.SaveAsPng(stream);
+                        break;
+
+                    case ScreenshotFormat.Jpg:
+                        image.SaveAsJpeg(stream);
+                        break;
+
+                    case ScreenshotFormat.Gif:
+                        image.SaveAsGif(stream);
+                        break;
+
+                    case ScreenshotFormat.Bmp:
+                        image.SaveAsBmp(stream);
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(screenshotFormat));
+                }
+            }
+        });
+
+        private string getFileName()
+        {
+            var dt = DateTime.Now;
+            var fileExt = screenshotFormat.ToString().ToLowerInvariant();
+
+            var withoutIndex = $"circles_{dt:yyyy-MM-dd_HH-mm-ss}.{fileExt}";
+            if (!storage.Exists(withoutIndex))
+                return withoutIndex;
+
+            for (ulong i = 1; i < ulong.MaxValue; i++)
+            {
+                var indexedName = $"circles_{dt:yyyy-MM-dd_HH-mm-ss}-{i}.{fileExt}";
+                if (!storage.Exists(indexedName))
+                    return indexedName;
+            }
+
+            return null;
+        }
+    }
+}
