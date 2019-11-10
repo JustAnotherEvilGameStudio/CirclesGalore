@@ -240,7 +240,7 @@
           "build/_._": {}
         }
       },
-      "ppy.osu.Framework/2019.1106.0": {
+      "ppy.osu.Framework/2019.1108.0": {
         "type": "package",
         "dependencies": {
           "FFmpeg.AutoGen": "4.2.0",
@@ -259,7 +259,7 @@
           "System.Reflection.Emit.Lightweight": "4.6.0",
           "System.Runtime.InteropServices": "4.3.0",
           "ppy.osu.Framework.NativeLibs": "2019.1104.0",
-          "ppy.osuTK.NS20": "1.0.111"
+          "ppy.osuTK.NS20": "1.0.115"
         },
         "compile": {
           "lib/netcoreapp3.0/osu.Framework.dll": {}
@@ -415,7 +415,16 @@
           }
         }
       },
-      "ppy.osuTK.NS20/1.0.111": {
+      "ppy.osu.Game.Resources/2019.1010.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/osu.Game.Resources.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/osu.Game.Resources.dll": {}
+        }
+      },
+      "ppy.osuTK.NS20/1.0.115": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/osuTK.dll": {}
@@ -1286,27 +1295,14 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
-          "ppy.osu.Framework": "2019.1106.0"
+          "ppy.osu.Framework": "2019.1108.0",
+          "ppy.osu.Game.Resources": "2019.1010.0"
         },
         "compile": {
           "bin/placeholder/Circles.Game.dll": {}
         },
         "runtime": {
           "bin/placeholder/Circles.Game.dll": {}
-        }
-      },
-      "Circles.Game.Tests/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "dependencies": {
-          "Circles.Game": "1.0.0",
-          "ppy.osu.Framework": "2019.1106.0"
-        },
-        "compile": {
-          "bin/placeholder/Circles.Game.Tests.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Circles.Game.Tests.dll": {}
         }
       }
     }
@@ -1972,10 +1968,10 @@
         "nunit.nuspec"
       ]
     },
-    "ppy.osu.Framework/2019.1106.0": {
-      "sha512": "jz1kC/lC9xlpTdYAmh5IX3ywPr1RMgVvef6AyncR2lFbj1ie41otgzaOOU/d7s4ZvoEi4o5gs15cDWOKrOKtbQ==",
+    "ppy.osu.Framework/2019.1108.0": {
+      "sha512": "V/xy2seyH1TuFjChTi2kXU4lxeWFik+G0V7HSRJFXz6uNEy+BK72s6JtXof5ETU50824YIzDvg1dt4TOQhFwQQ==",
       "type": "package",
-      "path": "ppy.osu.framework/2019.1106.0",
+      "path": "ppy.osu.framework/2019.1108.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1986,7 +1982,7 @@
         "lib/netstandard2.0/osu.Framework.dll",
         "lib/netstandard2.0/osu.Framework.pdb",
         "lib/netstandard2.0/osu.Framework.xml",
-        "ppy.osu.framework.2019.1106.0.nupkg.sha512",
+        "ppy.osu.framework.2019.1108.0.nupkg.sha512",
         "ppy.osu.framework.nuspec"
       ]
     },
@@ -2037,15 +2033,27 @@
         "runtimes/win-x86/native/swscale-5.dll"
       ]
     },
-    "ppy.osuTK.NS20/1.0.111": {
-      "sha512": "TyzRt1AyGYyaqy6dZhQ5BFtKZCgw3MD138gy9B5w0n8yFb8BDqhc8fWMShwnfB9rtA/NNMrlXf1olD5Hj9ggww==",
+    "ppy.osu.Game.Resources/2019.1010.0": {
+      "sha512": "V4Ntp+10f4cW+UvdRn/ff8mfye+yZjxZTwjVW65woV0OMibxJjnkb0VTiM85nanOAulYYwT6K0fGBFdvM4KeVw==",
       "type": "package",
-      "path": "ppy.osutk.ns20/1.0.111",
+      "path": "ppy.osu.game.resources/2019.1010.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/osu.Game.Resources.dll",
+        "ppy.osu.game.resources.2019.1010.0.nupkg.sha512",
+        "ppy.osu.game.resources.nuspec"
+      ]
+    },
+    "ppy.osuTK.NS20/1.0.115": {
+      "sha512": "DCNNTf0cC+FzxDKl27liHCuxiTY1KxGrT3CYSvdg4WKYq05SRr2pGw3BuXm2+pEDk5sajW+6/MFbgdB9FzoPzw==",
+      "type": "package",
+      "path": "ppy.osutk.ns20/1.0.115",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/osuTK.dll",
-        "ppy.osutk.ns20.1.0.111.nupkg.sha512",
+        "ppy.osutk.ns20.1.0.115.nupkg.sha512",
         "ppy.osutk.ns20.nuspec"
       ]
     },
@@ -4363,18 +4371,12 @@
       "type": "project",
       "path": "../CirclesGalore.Game/Circles.Game.csproj",
       "msbuildProject": "../CirclesGalore.Game/Circles.Game.csproj"
-    },
-    "Circles.Game.Tests/1.0.0": {
-      "type": "project",
-      "path": "../CirclesGalore.Game.Tests/Circles.Game.Tests.csproj",
-      "msbuildProject": "../CirclesGalore.Game.Tests/Circles.Game.Tests.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Circles.Game >= 1.0.0",
-      "Circles.Game.Tests >= 1.0.0",
-      "ppy.osu.Framework >= 2019.1106.0"
+      "ppy.osu.Framework >= 2019.1108.0"
     ]
   },
   "packageFolders": {
@@ -4415,9 +4417,6 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game.Tests\\Circles.Game.Tests.csproj": {
-              "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game.Tests\\Circles.Game.Tests.csproj"
-            },
             "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game\\Circles.Game.csproj": {
               "projectPath": "D:\\Development\\GAMES\\Rhythm\\CirclesGalore\\CirclesGalore.Game\\Circles.Game.csproj"
             }
@@ -4435,7 +4434,7 @@
         "dependencies": {
           "ppy.osu.Framework": {
             "target": "Package",
-            "version": "[2019.1106.0, )"
+            "version": "[2019.1108.0, )"
           }
         },
         "imports": [
