@@ -26,6 +26,8 @@ namespace Circles.Game.Configuration
             Set(CirclesSetting.ScalingPositionY, 0.5f, 0f, 1f);
 
             Set(CirclesSetting.UIScale, 1f, 0.8f, 1.6f, 0.01f);
+
+            Set(CirclesSetting.MenuParallax, true);
         }
 
         public GameConfigManager(Storage storage)
@@ -51,6 +53,8 @@ namespace Circles.Game.Configuration
         ScalingPositionY,
         ScalingSizeX,
         ScalingSizeY,
-        UIScale
+        UIScale,
+
+        MenuParallax
     }
 }

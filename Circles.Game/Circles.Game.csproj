@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="ppy.osu.Framework" Version="2019.1108.0" />
     <PackageReference Include="ppy.osu.Game.Resources" Version="2019.1010.0" />
   </ItemGroup>
