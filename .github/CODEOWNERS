@@ -1,0 +1,11 @@
+# QuantumlyTangled
+
+/Circles.Game/ @QuantumlyTangled
+/Circles.Game.Tests/ @QuantumlyTangled
+/Circles.Desktop/ @QuantumlyTangled
+
+# Ppy
+
+# Ppy Modified
+
+/Circles.Desktop/Program.cs @QuantumlyTangled
